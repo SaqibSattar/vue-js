@@ -1,20 +1,21 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      userName: 'Saqi',
+      greet: 'Hi',
+      website: 'Youtube'
+    }
+  }
+}
 </script>
-
+// two ways to bind text // 1. mustache syntax // 2. v-text attribute
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="wrapper">
+    <div>{{ greet }}, {{ userName }}</div>
+    <div v-text="website"></div>
+  </div>
 </template>
 
 <style scoped>
